@@ -1,0 +1,226 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gov Schemes Portal-Ministry of Citizen welfare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero{
+            background:linear-gradient(to right,skyblue,blue);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h2{font-size: 30px;}
+        .card span{color: green;font-size: 14px;}
+        footer{background:#222;color:white;padding: 40px 20px;}
+        footer a{color:white;text-decoration: none;}
+        footer a:hover{text-decoration: underline;}
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Gov Schemes Portal <br><small>Ministry of Citizen Welfare</small></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#schemes">Schemes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#register">Register Application</a></li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+    <section class="hero" id="home">
+        <div class="container">
+            
+            <h2>Government Schemes $ Subsidies for Citizens</h2>
+            <p class="mt-3">Access government welfare programs,apply online,and track your applications all in one place.</p>
+            <button class="btn-btn-light m-2" onclick="scrollToSection('schemes')">Explore Schemes</button>
+            <button class="btn-btn-outline-light m-2" onclick="scrollToSection('register')">Check Eligibility</button>
+        </div>
+    </section>
+    <section class="py-5" id="schemes">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-8 mb-2">
+                    <input type="text" class="form-control" placeholder="Search for schemes,Subsidies,or programs...">
+                </div>
+                <div class="col-md-4 mb-2">
+                    <select class="form-select">
+                        <option>Category</option>
+                        <option>Education</option>
+                        <option>Housing</option>
+                        <option>Healthcare</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Education Scheme</h5>
+                            <span>Active</span><br>
+                            <small>Last updated:May 17,2025</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Healthcare Benefit</h5>
+                            <span>Active</span><br>
+                            <small>Last updated:May 17,2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container my-5" id="register">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h2 class="mb-3">Registration Form</h2>
+                <form id="multiStepForm">
+                    <div class="form-step active" id="step1">
+                        <h4>1.Personal Details</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Date of Birth *</label>
+                                <input ty]pe="date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Gender *</label>
+                                <select class="form-select" required>
+                                    <option>Select your gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Mobile Number *</label>
+                                <input type="tel" class="form-control" placeholder="Enter 10-digit mobile number" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Category *</label>
+                                <select class="form-select" required>
+                                    <option>Select your category</option>
+                                    <option>General</option>
+                                    <option>SC</option>
+                                    <option>ST</option>
+                                    <option>OBC</option>
+                                </select>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label">State *</label>
+                                <select class="form-select" required>
+                                    <option>Select your state</option>
+                                    <option>Tamil Nadu</option>
+                                    <option>Karnataka</option>
+                                    <option>Maharashtra</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">PIN Code *</label>
+                                <input type="text" class="form-control" maxlength="6" required>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-info" onclick="nextStep(2)">Next:Identity Verification</button>
+                        </div>
+                    </div>
+                    <div class="form-step d-none" id="step2">
+                        <h4>2.Identity Verification</h4>
+                        <div class="mb-3">
+                            <label class="form-label">Aadhar Number *</label>
+                            <input type="text" class="form-control" maxlength="12" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Upload ID Proof *</label>
+                            <input type="file" class="form-control" required>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(1)">Back</button>
+                            <button type="button" class="btn btn-info" onclick="nextStep(3)">Next:Confirmation</button>
+                        </div>
+                    </div>
+                    <div class="form-step d-none" id="step3">
+                        <h4>3.Confirmation</h4>
+                        <p>Review your details and submit the application.</p>
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+                            <button type="submit" class="btn btn-success">Submit Application</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <h5>Gov Schemes Portal</h5>
+                    <p>Your one-stop platform for government welfare schemes and subsidies.</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Quick Links</h5>
+                    <a href="#home">Home</a>
+                    <a href="#schemes">All Schemes</a>
+                    <a href="#register">Eligibility Checker</a>
+                    <a href="#">Application Status</a>
+                    <a href="#">News & Updates</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Resources</h5>
+                    <a href="#">Help & FAQs</a>
+                    <a href="#">Document Guidelines</a>
+                    <a href="#">Application Process</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Contact Us</h5>
+                    <p>123 Government Avenue,Capital City</p>
+                    <p>1800-123-4567</p>
+                    <p>help@govschemes.gov</p>
+                    <p>Mon-Fri:9:00 AM-5:00 PM</p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p class="mb-0">2025 Government Schemes Portal.All Rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function scrollToSection(id){
+            document.getElementById(id).scrollIntoView({behaviour:'smooth'});
+        }
+        function nextStep(step){
+            document.querySelectorAll('.form-step').forEach(s=> s.classList.add('d-none'));
+            document.getElementById('step' + step).classList.remove('d.none');
+        }
+        function prevStep(step){
+            document.querySelectorAll('.form-step').forEach(s=> s.classList.add('d-none'));
+            document.getElementById('step' + step).classList.remove('d-none');
+        }
+        document.getElementById('multiStepForm').addEventListener('submit',function(e){
+            e.preventDefault();
+            alert("Application Submitted Successfully");
+        });
+    </script>
+
+    
+</body>
+</html>
